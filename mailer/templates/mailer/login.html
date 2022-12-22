@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Login Page</title>
+{% endblock %}
+
+
+{% block content %}
+<div class="container jumbotron">
+    <h2 class="text-info">Login Page</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Username" class="form-control" name="uname" />
+        <br>
+        <br>
+        <input type="password" placeholder="Password" class="form-control" name="pw" />
+        <br>
+        <br>
+        <input type="submit" value="Login" class="btn btn-outline-primary" />
+    </form>
+</div>
+{% endblock %}
+Footer
+© 2022 GitHub, Inc.

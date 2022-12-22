@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+<title>Login Page</title>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container jumbotron">
+    {% if messageSent %}
+    <h3 class="text-primary">Message Sent Successfully<strong></strong></h3>
+    <br>
+    <br>
+    <button class="btn btn-outline-warning"><a style="color: black ;" href="{% url 'sendmail_url' %}">Ok, Go
+            Back!</a></button>
+    {% else %}
+    <h1 class="text-primary"><strong>SEND E-MAIL</strong></h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <br>
+        <br>
+        <input type="submit" class="btn btn-success" />
+    </form>
+    {% endif %}
+</div>
+{% endblock %}
